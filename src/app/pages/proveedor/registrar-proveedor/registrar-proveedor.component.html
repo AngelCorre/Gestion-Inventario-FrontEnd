@@ -1,0 +1,74 @@
+<div class="col-md-6 offset-md-3">
+    
+    <h2 class="text-center">Registrar Proveedores</h2>
+    
+    <form (ngSubmit)="onSubmit()" #registerProveedor = "ngForm">
+        
+        <div class="form-group">
+            
+            <label>Proveedor</label>
+                <input 
+                type="text" 
+                class="form-control" 
+                id="descripcion" 
+                name="descripcion"
+                [(ngModel)]="proveedor.proveedor_descripcion" 
+                minlength="4" 
+                maxlength="50" 
+                placeholder="Proveedor" 
+                #descripcion = "ngModel" 
+                autocomplete="off" required>
+            
+            <div class="alert alert-danger" *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)">
+                
+                <div *ngIf="descripcion.errors.required">
+                    
+                    Digite un descripcion valido
+                    
+                </div>
+                
+                <div *ngIf="descripcion.errors.minlength">
+                    
+                    Digite al menos 4 digitos
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        <div class="form-group">
+            
+            <mat-form-field>
+                
+                <mat-label>Direccion</mat-label>
+                <mat-select name="direccion" [(ngModel)] = "proveedor.direccion.id" required>
+                    <mat-option *ngFor = "let direccion of direcciones" [value] = "direccion.id">
+                        {{ direccion.estado }}, {{ direccion.colonia }}, {{ direccion.calle }}
+                    </mat-option>
+                </mat-select>
+                
+            </mat-form-field>
+            
+        </div>
+        
+        <div class="form-group">
+            
+            <mat-form-field>
+                
+                <mat-label>Producto</mat-label>
+                <mat-select name="producto" [(ngModel)] = "proveedor.producto.id" required>
+                    <mat-option *ngFor = "let producto of productos" [value] = "producto.id">
+                        {{ producto.producto_descripcion }}
+                    </mat-option>
+                </mat-select>
+                
+            </mat-form-field>
+            
+        </div>
+        
+        <button class="btn btn-success" [disabled]="!registerProveedor.form.valid">Guardar</button>
+        
+    </form>
+    
+</div>

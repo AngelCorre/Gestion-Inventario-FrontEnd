@@ -1,0 +1,49 @@
+<h2>Lista Direcciones</h2>
+
+<table class="table table-striped text-center">
+
+    <thead class="table-dark">
+
+        <tr>
+
+            <th>Id</th>
+            <th>Estado</th>
+            <th>Colonia</th>
+            <th>Calle</th>
+            <th>Lt</th>
+            <th>Mz</th>
+            <th>Acciones</th>
+    
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        <tr *ngFor="let direccion of direcciones">
+
+            <td>{{direccion.id}}</td>
+            <td>{{direccion.estado}}</td>
+            <td>{{direccion.colonia}}</td>
+            <td>{{direccion.calle}}</td>
+            <td>{{direccion.lt}}</td>
+            <td>{{direccion.mz}}</td>
+            <td>
+
+                <button class="btn btn-primary" (click)="updateDireccion(direccion.id)">Actualizar</button>
+                <button class="btn btn-warning" (click)="deleteDireccion(direccion.id)" style="margin-left: 5px; margin-right: 5px;">Eliminar</button>
+                <button class="btn btn-info" (click)="detailsDireccion(direccion.id)">Detalles</button>
+
+            </td>
+
+        </tr>
+
+    </tbody>
+
+</table>
+
+<div class="text-center">
+
+    <button class="btn btn-success" (click)="toregister()">Registrar Direccion</button>
+
+</div>

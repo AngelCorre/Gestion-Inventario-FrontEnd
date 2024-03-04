@@ -1,0 +1,39 @@
+<mat-toolbar color="primary">
+    <a
+    [routerLink]="'home'"
+    mat-icon-button
+    class="example-icon"
+    arial-label="Example icon-button with menu icon"
+    >
+    <mat-icon>menu_books</mat-icon>
+</a>
+<span>Gestión de Inventario</span>
+<span class="example-spacer"></span>
+
+</mat-toolbar>
+
+
+<mat-drawer-container autosize>
+    <mat-drawer #drawer opened="true" mode="side" position="start">
+        <mat-nav-list>
+            <mat-list-item routerLink="home">
+                <button routerLink="home" mat-button><mat-icon>home</mat-icon> Home</button>
+            </mat-list-item>
+            <mat-list-item routerLink="listaProductos">
+                <button routerLink="listaProductos" mat-button><mat-icon>dashboard</mat-icon>Productos</button>
+            </mat-list-item>
+            <mat-list-item routerLink="listaProveedores">
+                <button routerLink="listaProveedores" mat-button><mat-icon>table</mat-icon>Proveedores</button>
+            </mat-list-item>
+            <mat-list-item routerLink="listaDirecciones">
+                <button routerLink="listaDirecciones" mat-button><mat-icon>analytics</mat-icon> Direcciones</button>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div class="container mg-20" style="min-height: 600px;">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>
+

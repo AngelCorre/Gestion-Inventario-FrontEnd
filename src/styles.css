@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+
+.mg-20 {
+
+    margin: 20px;
+
+}
+
+.ln-h {
+
+    line-height: 25px;
+
+}
+
+.pd-t20 {
+
+    padding-top: 20px;
+
+}
+
+.contactame {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+
+}

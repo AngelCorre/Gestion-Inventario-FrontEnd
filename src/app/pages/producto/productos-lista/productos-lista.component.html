@@ -1,0 +1,41 @@
+<h2>Lista Productos</h2>
+
+<table class="table table-striped text-center">
+
+    <thead class="table-dark">
+
+      <tr>
+        <th>Id</th>
+        <th>Descripcion</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th>Acciones</th>
+      </tr>
+
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let producto of productos">
+        <td>{{producto.id}}</td>
+        <td>{{producto.producto_descripcion}}</td>
+        <td>{{producto.precio}}</td>
+        <td>{{producto.cantidad}}</td>
+        <td>
+
+            <button class="btn btn-primary" (click)="updateProducto(producto.id)">Actualizar</button>
+            <button class="btn btn-warning" style="margin-left: 5px; margin-right: 5px;" (click)="deleteProducto(producto.id)">Eliminar</button>
+            <button class="btn btn-info" (click)="detailsProducto(producto.id)">Detalles</button>
+
+        </td>
+      </tr>
+
+    </tbody>
+
+  </table>
+
+  <div class="text-center">
+
+    <button (click)="toregister()" class="btn btn-success">Registrar Producto</button>
+
+  </div>

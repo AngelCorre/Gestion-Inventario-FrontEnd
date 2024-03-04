@@ -1,0 +1,154 @@
+<div class="col-md-6 offset-md-3">
+        
+    <h2 class="text-center">Actualizar Dirección</h2>
+    
+    <form (ngSubmit)="onSubmit()" #registerDireccion = "ngForm">
+        
+        <div class="form-group">
+            
+            <label>Estado</label>
+            <input type="text" 
+            class="form-control" 
+            id="estado" 
+            name="estado"
+            [(ngModel)]="direccion.estado" 
+            minlength="4" 
+            maxlength="50" 
+            placeholder="Estado" 
+            #estado = "ngModel" required>
+
+            <div class="alert alert-danger" *ngIf="estado.invalid && (estado.dirty || estado.touched)">
+
+                <div *ngIf="estado.errors.required">
+                
+                    Digite un estado valido
+
+                </div>
+
+                <div *ngIf="estado.errors.minlength">
+
+                    Digite al menos 4 digitos
+                
+                </div>
+
+            </div>
+            
+        </div>
+        
+        <div class="form-group">
+            
+            <label>Colonia</label>
+            <input type="text" 
+            class="form-control" 
+            id="colonia" 
+            name="colonia"
+            [(ngModel)]="direccion.colonia" 
+            minlength="4" 
+            maxlength="50" 
+            placeholder="Colonia" 
+            #colonia = "ngModel" required>
+
+            <div class="alert alert-danger" *ngIf="colonia.invalid && (colonia.dirty || colonia.touched)">
+            
+                <div *ngIf="colonia.errors.required">
+                
+                    Digite una colonia valida
+
+                </div>
+
+                <div *ngIf="colonia.errors.minlength">
+                
+                    Digite al menos 4 digitos
+
+                </div>
+
+            </div>
+            
+        </div>
+
+        <div class="form-group">
+            
+            <label>Calle</label>
+            <input type="text" 
+            class="form-control" 
+            id="calle" 
+            name="calle"
+            [(ngModel)]="direccion.calle" 
+            minlength="4" 
+            maxlength="50" 
+            placeholder="Calle"
+            #calle = "ngModel" required>
+
+            <div class="alert alert-danger" *ngIf="calle.invalid && (calle.dirty || calle.touched)">
+            
+                <div *ngIf="calle.errors.required">
+                
+                    Digita una calle valida
+
+                </div>
+
+                <div *ngIf="calle.errors.minlength">
+                
+                    Digite al menos 4 digitos
+
+                </div>
+
+            </div>
+            
+        </div>
+
+        <div class="form-group">
+            
+            <label>Lt</label>
+            <input type="number" 
+            class="form-control" 
+            id="lt" 
+            name="lt"
+            [(ngModel)]="direccion.lt" 
+            minlength="1" 
+            maxlength="5" 
+            placeholder="Lt" 
+            #lt = "ngModel" required>
+            
+            <div class="alert alert-danger" *ngIf="lt.invalid && (lt.dirty || lt.touched)">
+            
+                <div *ngIf="lt.errors.required">
+
+                    Digite el lote
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            
+            <label>Mz</label>
+            <input type="number" 
+            class="form-control" 
+            id="mz" 
+            name="mz"
+            [(ngModel)]="direccion.mz" 
+            minlength="1" 
+            maxlength="5" 
+            placeholder="Mz" 
+            #mz = "ngModel" required>
+
+            <div class="alert alert-danger" *ngIf="mz.invalid && (mz.dirty || mz.touched)">
+
+                <div *ngIf="mz.errors.required">
+                
+                    Digite la manzana
+
+                </div>
+
+            </div>
+            
+        </div>            
+        
+        <button class="btn btn-success" [disabled]="!registerDireccion.form.valid">Actualizar</button>
+        
+    </form>
+    
+</div>

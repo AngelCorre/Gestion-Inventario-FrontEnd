@@ -1,0 +1,41 @@
+<h2 class="mg-10">Lista Proveedores</h2>
+
+<table class="table table-striped text-center">
+
+    <thead class="table-dark">
+
+      <tr>
+        <th>Id</th>
+        <th>Descripcion</th>
+        <th>Direccion</th>
+        <th>Proveedor</th>
+        <th>Acciones</th>
+      </tr>
+
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let proveedor of proveedores">
+        <td>{{proveedor.id}}</td>
+        <td>{{proveedor.proveedor_descripcion}}</td>
+        <td>{{proveedor.direccion.estado}}, {{proveedor.direccion.colonia}}, {{proveedor.direccion.calle}}</td>
+        <td>{{proveedor.producto.producto_descripcion}}</td>
+        <td>
+
+            <button class="btn btn-primary" (click)="updateProveedor(proveedor.id)">Actualizar</button>
+            <button class="btn btn-warning" style="margin-left: 5px; margin-right: 5px;" (click)="deleteProveedor(proveedor.id)">Eliminar</button>
+            <button class="btn btn-info" (click)="detailsProveedor(proveedor.id)">Detalles</button>
+
+        </td>
+      </tr>
+
+    </tbody>
+
+  </table>
+
+  <div class="text-center">
+
+    <button (click)="toregister()" class="btn btn-success">Registrar Proveedor</button>
+
+  </div>
